@@ -43,7 +43,7 @@ export default function Filter(){
         })
         
         
-    }, [ ])
+    }, [dispatch])
 
     return(
         <div className='list'>    
