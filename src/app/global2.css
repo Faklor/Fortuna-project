@@ -3,17 +3,15 @@
     margin:0;
     box-sizing:border-box;
     color:#686868;
-}
-
-*::{
     scrollbar-width: thin;          /* "auto" или "thin"  */
     scrollbar-color: #2564CF #403F3F;
 }
 
+
 *::-webkit-scrollbar {
     width: 6px;           /* ширина scrollbar */
 }
-*&::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     background: #403F3F;        /* цвет дорожки */
 }
 *::-webkit-scrollbar-thumb {
