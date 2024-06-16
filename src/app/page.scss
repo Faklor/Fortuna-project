@@ -45,12 +45,7 @@
                 background-color: #03C770;
                 //pointer-events:none;
             }
-<<<<<<< HEAD
             &[data-alt]:hover:after{
-=======
-            &[alt]:hover:after{
->>>>>>> 62b7de174fef318de323ae761046384daea0a865
-                
                 content: attr(data-alt);
                 background-color: #fff;
                 position: absolute;
