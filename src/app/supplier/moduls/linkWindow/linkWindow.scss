@@ -1,0 +1,48 @@
+.linkWindow{
+    position: relative;
+    //width: 10em;
+    //margin:0.5em 1em;
+
+    //border-radius: 5px;
+    
+    //background-color: #fff;
+    //box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+    z-index: 0;
+    .other{
+        display: flex;
+        margin:0.1em 0 0.2em 0.5em;
+        
+        img{
+            padding:0.2em;
+            border-radius: 5px;
+            margin: 0 0.3em 0 0;
+            box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.25);
+        }
+        
+
+        .unvisible{
+            background-color: #686868;
+        }
+        .visible{
+            background-color: #2564CF;
+        }  
+        
+        a,p{
+            padding: 0.2em 0 ;
+            //margin:0.5em 0 0 0.5em;
+        }
+    }
+   
+
+    button{
+        outline: 0;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        background-color: #DF3482;
+        color:#fff;
+        border:none;
+        padding: 0.5em 1em;
+        margin:0.5em 0 0.5em 0.5em;
+        border-radius: 5px;
+    }
+}

@@ -1,0 +1,78 @@
+.supplier{
+    background-color: #FAF9F8;
+    
+    font-size: 20px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 25% 1fr 25%;
+    .mainDiv{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 2.6em 100%;
+
+        margin:1em 0 0 0;
+        
+        overflow-y: scroll;
+        overflow: hidden;
+        
+        //border-radius: 10px;
+        .titleAndNav{
+            
+            
+            grid-column: 1/4;
+            background-color: #2564CF;
+            //background-color: #DF3482;
+            height: 2.6em;
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+
+            
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+            p{
+                justify-self: center;
+                align-self: center;
+                color:#fff;
+            }
+
+            .rectangle{
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                align-self: center;
+                justify-self: center;
+                margin: 4.5em auto 0 0;
+                transform: rotate(45deg);
+                background-color: #fff;
+                overflow: hidden;
+                border:1px solid;
+                border-color: #2564CF #DF3482;
+                object-fit: cover;
+
+                z-index: 2;
+                .logo{
+                    //position: absolute;
+                    transform: rotate(-45deg);
+                    margin: 0.5em;
+
+                }
+            }
+        }
+
+        
+
+        .zoneOutput{
+            
+            //border-left:1.5px  solid #DF3482;
+
+        }
+    }
+
+   
+}
+
+
+

@@ -1,0 +1,112 @@
+.addOrder{
+    
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    position: relative;
+    z-index: 0;
+    margin: 5em 1em 1em 1em;
+    cursor: pointer;
+
+
+    .unShadow{
+        box-shadow: none;
+        margin: 0;
+        grid-template-columns: 1fr 1fr;
+
+        .content{
+            .name, .sum{
+                img{
+                    margin:0 0.3em 0.7em 0.5em;
+                    
+                    &:nth-child(1){
+                        background-color: #DF3482;
+                    }
+                    
+                }
+            }
+           
+
+
+        }
+        .count{
+            
+
+            .unVisible{
+                background-color: #2564CF;
+
+                &:nth-child(3){
+                    background-color: #DF3482;
+                }
+            }
+        }
+        
+    }
+
+    select{
+        outline:0;
+        border:none;
+        padding:0.5em;
+        font-size: 18px;
+        cursor:pointer;
+
+        transition: 0.3s;
+        margin:0.5em;
+        //box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        border:1px solid rgba(0, 0, 0, 0.25);
+    }
+
+    .date, .subdivision, .drivers{
+        display: flex;
+        img{
+            background-color: #2564CF;
+            padding: 0.2em;
+            border-radius: 5px;
+            margin: 0 0em 0 0.5em;
+
+            align-self: center;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+        }
+    }
+    
+    .date{
+        input{
+            outline: 0;
+            border:none;
+            margin: 0 0 0 0.5em;
+            font-size: 16px;
+            border-radius: 5px;
+            border:1px solid rgba(0, 0, 0, 0.25);
+            padding: 0.5em;
+        }
+    }
+    .subdivision{
+
+    }
+    .drivers{
+
+    }
+    .controllers{
+        button{
+            outline:0;
+            border:none;
+            padding:0.5em 1em;
+            font-size: 16px;
+            cursor:pointer;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+    
+            transition: 0.3s;
+            margin:0.3em;
+            border-radius: 5px;
+            background-color: #2564CF;
+            color: #fff;
+
+            &:nth-child(1){
+                background-color: #DF3482;
+            }
+        }
+    }
+}

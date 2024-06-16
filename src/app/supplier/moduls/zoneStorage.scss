@@ -1,0 +1,54 @@
+.zoneStorage{
+    //border-right:1.5px  solid #DF3482;
+    overflow:hidden ;
+    overflow-y: auto;
+    
+    height: 100%;
+    
+    .filter{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        position: fixed;
+        //backdrop-filter: blur(4px);
+        z-index: 1;
+        
+        .catagory{
+            color:#646363;
+            background-color: #fff;
+            font-size: 18px;
+            padding: 1em 2em;
+            margin:1em;
+
+            border-radius: 5px;
+
+            outline: none;
+            cursor:pointer;
+            border:none;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+        }
+
+        .add{
+            //padding: 1em 2em;
+            width: 4em;
+            height: 4em;
+            background:#fff;
+            border-radius: 5px;
+            border:none;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+            cursor: pointer;
+            //width: 6em;
+            //height: 6em;
+            outline:none;
+            align-self: center;
+            
+
+
+        }
+
+        
+    }
+    .zoneParts{
+        margin: 5em 0 4em 0;
+    }
+}

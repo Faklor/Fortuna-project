@@ -1,0 +1,113 @@
+.titlePage{
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: #03C770;
+
+    
+    .auth{
+        //background-color: #FAF9F8;
+        align-self: start;
+        justify-self: center;
+        background-color: #0EB56B;
+        width: 100%;
+        height: 100%;
+        h1,h2{
+            text-align: center;
+            color:#fff;
+            text-shadow: 3px 3px rgba(0, 0, 0, 0.25);
+            margin:3em 1em 1em 1em;
+        }
+       
+
+        .icons{
+            width: 4em;
+            height: 4em;
+            transform: rotate(45deg);
+            background-color: #fff;
+            margin:3em auto;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+            display: grid;
+            cursor: pointer;
+            transition: 0.1s;
+            
+
+            img{
+                transform: rotate(-45deg);
+                align-self: center;
+                justify-self: center;
+                
+            }
+
+            &:hover{
+                background-color: #03C770;
+                //pointer-events:none;
+            }
+            &[alt]:hover:after {
+                
+                content: attr(alt);
+                background-color: #fff;
+                position: absolute;
+                transform: rotate(-45deg);
+                margin:-3.5em 0 0 4em;
+                padding: 0.5em 1em;
+                border-radius: 5px;
+                color: #03C770;
+
+            }
+        }
+        .inputZone{
+            justify-content: center;
+            display: flex;
+            img{
+                background-color: #03C770;
+                padding: 0.4em;
+                border-radius: 5px;
+                box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+                margin: 0.5em;
+            }
+
+            input{
+                height: 2.6em;
+                align-self: center;
+
+                border-radius: 10px;
+                border:none;
+                padding: 0.3em 1em;
+                margin:0.1em;
+                font-size: 20px;
+                box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+                outline:0;
+                cursor: pointer;
+                transition: 0.3s;
+    
+                &:focus{
+                    background-color: #03C770;
+                    color:#fff;
+                    &::placeholder{
+                        color: #fff;
+                    }
+                }
+                &::placeholder{
+                    color: #03C770;
+                }
+            }
+        }
+        
+    }
+
+    .slyder{
+        align-self: center;
+        justify-self: center;
+        //position: relative;
+        //width: 100%;
+        //height: 100%;
+        img{
+            //position: relative;
+            //width: 100%;
+            //height: 100%;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+.zoneOutput{
+
+    overflow: hidden;
+    overflow-y: auto;
+    height: 100%;
+    .zoneOrders{
+        //margin:5em 0 0 0;
+        margin-bottom: 5em;
+        .order{
+            background-color: #fff;
+        }
+    }
+    
+}

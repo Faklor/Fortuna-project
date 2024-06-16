@@ -1,0 +1,141 @@
+.fullOrder{
+    
+    .date{
+        text-align: center;
+        background-color: #2564CF;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        color:#fff;
+        border-radius: 5px;
+        padding: 0.3em;
+    }
+    
+
+
+    .orders{
+        //display: flex;
+       
+
+       
+        .order{
+            //display: flex;
+            background-color: #fff;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+            border-radius: 5px;
+            position: relative;
+            z-index: 0;
+            margin:1em;
+
+            .worker{
+                display: flex;
+                
+                img{
+                    margin:0.5em 0.5em 0 0.5em;
+                    background-color: #2564CF;
+                    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+                    padding: 0.1em;
+                    border-radius: 5px;
+                }
+                //background-color: red;
+                p{
+                    margin:0.5em 0 0 0;
+                }
+            }
+            .partOrder{
+                width: 100%;
+                display: grid;
+                grid-template-columns: 18% 1fr 1fr;
+
+                background-color: #fff;
+                border-radius: 5px;
+                position: relative;
+                z-index: 0;
+                //margin:1em;
+
+
+                .category{
+                    img{
+                        border-radius: 5px;
+                        margin: 0.5em;
+                        padding: 0.3em;
+                        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+                        background-color: #2564CF;
+                    }
+                 
+                    
+                   
+                    
+                    
+                }
+            
+                .content{
+                    display: grid;
+                    //grid-template-columns: 10% 1fr 10% 1fr;
+                    
+                    img{
+                        border-radius: 5px;
+                        //margin: 0.5em;
+                        padding: 0.1em;
+                        background-color: #2564CF;
+                        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+            
+                    }
+                 
+                    
+                    
+                    
+            
+                    p{
+                        margin:0 0 0 0.3em;
+            
+                    }
+            
+                    .name{
+                        margin:0.5em 0 0 0;
+                        display: flex;
+            
+            
+                    }
+                    .sum{
+                        margin: -0.5em 0 0 0;
+                        display: flex;
+                        
+                        img{
+                            background-color: #DF3482;
+                        }
+                        
+                        
+                
+                    }
+                }
+            
+                .count{
+                    margin-left: auto;
+            
+                    align-self: center;
+                    justify-self: end;
+                    //margin: 0 0 0 0.3em;
+                    margin:0 0.5em 0 0;
+                    
+                }
+            
+                .otherData{
+                    .other{
+                        display: flex;
+                        margin:0.1em 0 0.2em 0.5em;
+                        
+                        img{
+                            padding:0.2em;
+                            border-radius: 5px;
+                            margin: 0 0.3em 0 0;
+                            box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.25);
+                            background-color: #2564CF;
+                        }
+
+                       
+                        
+                    }
+                }
+            }
+        }
+    }
+}
