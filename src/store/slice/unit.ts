@@ -17,7 +17,7 @@ export const counterSlice = createSlice({
   name: 'unit',
   initialState,
   reducers: {
-    setUnit: (state, action: PayloadAction<CounterState>) => {
+    setUnit: (state:any, action: PayloadAction<CounterState>) => {
       state.unit = action.payload
     }
   }
