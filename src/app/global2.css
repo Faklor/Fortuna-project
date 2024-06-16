@@ -3,20 +3,18 @@
     margin:0;
     box-sizing:border-box;
     color:#686868;
+    scrollbar-width: 1px;          /* "auto" или "thin"  */
+    scrollbar-color: #2564CF transparent;
 }
 
-*::{
-    scrollbar-width: thin;          /* "auto" или "thin"  */
-    scrollbar-color: #2564CF #403F3F;
-}
 
-*::-webkit-scrollbar {
-    width: 6px;           /* ширина scrollbar */
+*::-webkit-scrollbar{
+    width: 1px;         /* ширина scrollbar */
 }
-*&::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track{
     background: #403F3F;        /* цвет дорожки */
 }
-*::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb{
     background-color: #2564CF;    /* цвет плашки */
     border-radius: 20px;       /* закругления плашки */
     border: 0px solid #403F3F;  /* padding вокруг плашки */

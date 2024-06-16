@@ -19,12 +19,9 @@ import accountantImg from '@/res/titlePage/accountant.svg'
 export default function Login(){
     const [login, setLogin] = useState<String>('')
     const router = useRouter()
-    let nowUser = null
+    let nowUser:any = null
 
-    interface User{
-        login:String
-        access:String[]
-    }
+    
 
     const users = [
         {
@@ -62,7 +59,7 @@ export default function Login(){
                 {
                     nowUser !== null?nowUser.access.map((item:any,index:number)=>{
                         
-                        return <div className='icons' alt={item.name} key={index}>
+                        return <div className='icons' data-alt={item.name} key={index}>
                             <Image src={item.img} width={50} height={50} alt="login" onClick={()=>router.push(item.page)}/>
                             {/* <Link href={item.page} key={index}><br/>{item.name}</Link> */}
                         </div>
@@ -73,7 +70,7 @@ export default function Login(){
             </div>
 
             <div className='slyder'>
-                <Image src={backgroundTitlePage} width={1100} height={800} alt="sl_1"/>
+                <Image src={backgroundTitlePage} width={1100} height={800} alt="sl_1" priority={true}/>
             </div>
             
         </main>

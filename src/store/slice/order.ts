@@ -4,7 +4,7 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 
 
 export interface CounterState {
-    order:object
+    order:any
 }
 
 const initialState: CounterState = {
@@ -18,7 +18,7 @@ export const counterSlice = createSlice({
     setOrder: (state, action: PayloadAction<CounterState>) => {
       state.order = action.payload
     }, 
-    updateOrder: (state, action: PayloadAction<CounterState>) =>{ 
+    updateOrder: (state, action:any) =>{ 
       let min = 1
       
       

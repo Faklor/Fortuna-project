@@ -20,8 +20,8 @@ import { useEffect, useState } from 'react'
 
 export default function AddOrder(){
     //------------------redux--------------------
-    const selectorPart = useAppSelector<object>(state => state.selectOrder.order)
-    const selectorUnit = useAppSelector<object>(state => state.unit.unit)
+    const selectorPart = useAppSelector<any>(state => state.selectOrder.order)
+    const selectorUnit = useAppSelector<any>(state => state.unit.unit)
     const dispatch = useAppDispatch()
     //------------axios--------------------------
     async function getWorkers() {
@@ -47,7 +47,8 @@ export default function AddOrder(){
     let nowDate = new Date().getFullYear()  + '-' + ('0' + (new Date().getMonth()+1)).slice(-2)  + '-' + ('0' + new Date().getDate()).slice(-2) 
 
     let [date, setDate] = useState<string>(nowDate)
-   
+
+    
     
     
     //--------------send-------------------------
@@ -100,7 +101,8 @@ export default function AddOrder(){
                                 selectorUnit.parts.map((part:any, index:number)=>{
                                     
                                     if(part.name === selectorPart.name){
-                                        dispatch(updateOrder({method:'up', maxC:part.count}))   
+                                        let data:any = {method:'up', maxC:part.count}
+                                        dispatch(updateOrder(data))   
                                     }
                                 })
                                 
@@ -109,7 +111,8 @@ export default function AddOrder(){
                             }}><Image src={plus} width={20} height={20} alt='Добавить 1-ну запчасть' /></button>
                         
                             <button  className='unVisible' onClick={()=>{
-                                dispatch(updateOrder({method:'down', maxC:selectorPart.count}))
+                                let data:any = {method:'down', maxC:selectorPart.count}
+                                dispatch(updateOrder(data))
                             }}><Image src={minus} width={15} height={15} alt='Удалить 1-ну запчасть' /></button>
                         </div>
                     </div>
@@ -120,10 +123,10 @@ export default function AddOrder(){
 
                     </div>
                     
-                    <div className='subdivision' onChange={(e)=>setTech(e.target.value)}>
+                    <div className='subdivision' onChange={(e:any)=>setTech(e.target.value)}>
                         {/* <Image src={} width={25} height={25} alt='Подразделение'/> */}
                         <Image src={home} width={35} height={35} alt='Работник'/>
-                        <select onChange={(e)=>{setTech(e.target.value)}} >
+                        <select onChange={(e:any)=>{setTech(e.target.value)}} >
                             {/* <option value={selectorUnit.id} selected>{selectorUnit.name}</option> */}
                             {list_teches.map((tech:any,index:number)=>{
                                 //console.log(tech)
@@ -147,7 +150,8 @@ export default function AddOrder(){
                     
                     <div className='controllers'>
                         <button onClick={()=>{
-                            dispatch(setOrder({}))
+                            let objValue:any = {}
+                            dispatch(setOrder(objValue))
                         }}>ОТМЕНА</button>
                         <button onClick={()=>{
                             //console.log(,date,String(one_worker), selectorPart)
@@ -156,8 +160,9 @@ export default function AddOrder(){
                             sendOrder(id,date,String(one_worker), selectorPart)
                             .then(res=>{
                                 post(id).then(res=>{
+                                    let objValue:any = {}
                                     dispatch(setUnit(res.data))
-                                    dispatch(setOrder({}))
+                                    dispatch(setOrder(objValue))
                                 })
                             })
                         }}>ДОБАВИТЬ</button>

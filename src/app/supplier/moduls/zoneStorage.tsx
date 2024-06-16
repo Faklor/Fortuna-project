@@ -18,7 +18,7 @@ import { setUnit } from '@/store/slice/unit'
 
 export default function ZoneStorage(){
     //----redux------
-    const selector = useAppSelector<object>(state => state.unit.unit)
+    const selector = useAppSelector<any>(state => state.unit.unit)
     
     //console.log(selector.parts)
     //---state-------

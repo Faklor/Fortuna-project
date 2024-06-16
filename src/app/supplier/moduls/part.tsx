@@ -36,7 +36,7 @@ export default function Part({part,index,id}:any){
 
     //------------redux-------------------
     const dispatch = useAppDispatch()
-    let selectorPart = useAppSelector<object>(state => state.selectOrder.order)
+    let selectorPart = useAppSelector<any>(state => state.selectOrder.order)
     
 
     //-----------------function-----------
@@ -74,7 +74,7 @@ export default function Part({part,index,id}:any){
         <>
        
         {part.count === 0?
-            <div className='part' onClick={(e)=>{
+            <div className='part' onClick={(e:any)=>{
                 
                     if(!menu && e.target.className === "part" || e.target.className === "category" || e.target.className === "sum" || e.target.className === "linkWindow" || e.target.className === "other" && e.target.className !== "visible"){
                         setMenu(true)
@@ -156,7 +156,7 @@ export default function Part({part,index,id}:any){
         </div>    
         /*-------------------visible-------------------------------------------------*/
         :
-        <div className='part' onClick={(e)=>{
+        <div className='part' onClick={(e:any)=>{
                 if(!menu && e.target.className === "part" || e.target.className === "category" || e.target.className === "sum" || e.target.className === "linkWindow" || e.target.className === "other" && e.target.className !== "visible"){
                     setMenu(true)
                 }

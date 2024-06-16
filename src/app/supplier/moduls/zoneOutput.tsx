@@ -12,20 +12,20 @@ import { setOrder, updateOrder } from '@/store/slice/order'
 
 export default function ZoneOutput(){
     //------------------redux--------------------
-    const selectorPart = useAppSelector<object>(state => state.selectOrder.order)
-    const selectorUnit = useAppSelector<object>(state => state.unit.unit)
+    const selectorPart = useAppSelector<any>(state => state.selectOrder.order)
+    const selectorUnit = useAppSelector<any>(state => state.unit.unit)
     const dispatch = useAppDispatch()
 
-    let array = selectorUnit.orders
-    let group = {}
+    let array:any = selectorUnit.orders
+    let group:any = {}
 
 
     if(array){
         array = [...selectorUnit.orders]
        
         
-        let sortArray =  array.sort((a:string,b:string)=>{
-            return new Date(b.date) - new Date(a.date)
+        let sortArray:any =  array.sort((a:any,b:any)=>{
+            return new Date(b.date).getTime() - new Date(a.date).getTime()
         })
         
         group = Object.groupBy(sortArray, ({date}:{date:any})=> date)
@@ -41,13 +41,9 @@ export default function ZoneOutput(){
                 {selectorUnit.orders? 
                    
                     Object.entries(group).map((item:any,index:number)=>{
-                        //console.log(item)
+                       
                         return <Order {...item} key={index}/>
                     })
-                    // selectorUnit.orders.map((order:any, index:number)=>{
-                    //     //console.log(order)
-                    //     return <Order {...order} key={index}/>
-                    // })
                     :
                 <></>}
                 
