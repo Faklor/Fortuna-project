@@ -45,7 +45,7 @@
                 background-color: #03C770;
                 //pointer-events:none;
             }
-            &[alt]:hover:after {
+            &[alt]:hover:after{
                 
                 content: attr(alt);
                 background-color: #fff;
