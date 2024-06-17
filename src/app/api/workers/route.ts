@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+//export const dynamic = "force-dynamic";
 import dbConnet from "@/lib/db"
 import Wokrer from '@/models/workers'
 import { NextRequest, NextResponse } from "next/server"
