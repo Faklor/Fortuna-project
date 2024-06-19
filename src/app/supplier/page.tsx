@@ -12,7 +12,7 @@ import supplier from '@/res/titlePage/supplier.svg'
 
 export default function Supplier(){
     
-    const data = [{}]
+    
     
 
     return(

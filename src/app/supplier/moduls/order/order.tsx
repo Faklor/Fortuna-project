@@ -3,6 +3,8 @@ import Image from 'next/image'
 import './order.scss'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { useAppSelector, useAppDispatch } from '@/store/hooks'
+
 //----------------res----------------------
 import categoryImg from '@/res/category.svg'
 import linkImg from '@/res/link.svg'
@@ -20,11 +22,14 @@ export default function Order(order:any){
     //-----------------state----------------------
     let [category, setCategory] = useState<Array<object>>([])
 
+    //-----------------redux----------------------
+    const URLMAINPC = useAppSelector<any>(state => state.URLMAINPC.URLMAINPC)
+
 
 
     //------------------fs------------------------
     async function categoryes() {
-        return await axios.get('http://localhost:3000/api/catagoryes')
+        return await axios.get(`http://${URLMAINPC}:3000/api/catagoryes`)
     }
     useEffect(()=>{
         categoryes()

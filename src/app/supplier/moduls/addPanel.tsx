@@ -45,6 +45,7 @@ export default function AddPanel({id}:any){
     //==========refs=======================
     //const refAddButton = useRef<HTMLButtonElement>(null)
     //==========redux======================
+    const URLMAINPC = useAppSelector<any>(state => state.URLMAINPC.URLMAINPC)
     const dispatch  = useAppDispatch()
 
     function getStatus(errorData:number,state:string ){
@@ -70,15 +71,15 @@ export default function AddPanel({id}:any){
     
     async function sendData(id:number,category:string,namePart:string, serialNumberPart:string,sellNumberPart:string, countPart:string, sell:string,contact:string,link:string, manufacturer:string){
 
-        return await axios.post('http://localhost:3000/api/teches/addPart', {id:id,catagory:category,name: namePart, serialNumber: serialNumberPart,sellNumber: sellNumberPart,count: Number(countPart),  sum:Number(sell),nameContact:contact,linkContact:link,manufacturer:manufacturer})
+        return await axios.post(`http://${URLMAINPC}:3000/api/teches/addPart`, {id:id,catagory:category,name: namePart, serialNumber: serialNumberPart,sellNumber: sellNumberPart,count: Number(countPart),  sum:Number(sell),nameContact:contact,linkContact:link,manufacturer:manufacturer})
     }
 
     async function post(id:string){
-        return await axios.post('http://localhost:3000/api/teches', {id:id})
+        return await axios.post(`http://${URLMAINPC}:3000/api/teches`, {id:id})
     }
     //------------------fs------------------------
     async function categoryes() {
-        return await axios.get('http://localhost:3000/api/catagoryes')
+        return await axios.get(`http://${URLMAINPC}:3000/api/catagoryes`)
     }
     //--------------------------------------------
     useEffect(()=>{
@@ -101,9 +102,13 @@ export default function AddPanel({id}:any){
                 {/* <input type="text" placeholder="Категория" value={category} onChange={(e)=>setCategory(e.target.value)}/> */}
                 {/* {getStatus(20, category)} */}
                 <select onChange={e=>setInputCatagory(e.target.value)}>
+                    <option>Выбрать</option>
                     {
                         category.map((item:any, index:number)=>{
-                            return <option key={index} value={item.title}>{item.title}</option>
+                            return <option key={index} value={item.title}>
+                                
+                                {item.title}
+                            </option>
                         })
                     }
                 </select>   
@@ -130,13 +135,14 @@ export default function AddPanel({id}:any){
             </div>
             <div className='inputZone'>
                 <Image src={sum} width={50} height={50} alt='Имя запчасти' className='prop' title='Цена'/>
-                <input type="number" placeholder="Цена" min='0'  value={sell} onChange={(e)=>setSell(e.target.value)} title='Цена'/>
+                <input type="number" placeholder="Цена за шт." min='0'  value={sell} onChange={(e)=>setSell(e.target.value)} title='Цена'/>
                
             </div>
             <div className='inputZone'>
                 <Image src={manufacturerImg} width={50} height={50} alt='Имя запчасти' className='prop'/>
                 {/* <input type="text" placeholder="Производитель " value={manufacturer} onChange={(e)=>setManufacturer(e.target.value)}/> */}
                 <select onChange={(e)=>setManufacturer(e.target.value)}>
+                    <option>Выбрать</option>
                     <option>🇧🇾 Беларусь</option>
                     <option>🇨🇳 Китай</option>
                     <option>🇷🇺 Россия</option>

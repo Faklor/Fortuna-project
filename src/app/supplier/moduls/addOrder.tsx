@@ -22,19 +22,20 @@ export default function AddOrder(){
     //------------------redux--------------------
     const selectorPart = useAppSelector<any>(state => state.selectOrder.order)
     const selectorUnit = useAppSelector<any>(state => state.unit.unit)
+    const URLMAINPC = useAppSelector<any>(state => state.URLMAINPC.URLMAINPC)
     const dispatch = useAppDispatch()
     //------------axios--------------------------
     async function getWorkers() {
-        return await axios.get('http://localhost:3000/api/workers')
+        return await axios.get(`http://${URLMAINPC}:3000/api/workers`)
     }
     async function getteches() {
-        return await axios.get('http://localhost:3000/api/teches')
+        return await axios.get(`http://${URLMAINPC}:3000/api/teches`)
     }
     async function sendOrder(id:number, date:any, worker:string, part:any) {
-        return await axios.post('http://localhost:3000/api/teches/addOrder', { id:id, date:date, worker:worker, part:part})
+        return await axios.post(`http://${URLMAINPC}:3000/api/teches/addOrder`, { id:id, date:date, worker:worker, part:part})
     }
     async function post(id:string){
-        return await axios.post('http://localhost:3000/api/teches', {id:id})
+        return await axios.post(`http://${URLMAINPC}:3000/api/teches`, {id:id})
     }
     //----------------values---------------------
     let [list_workers, setList_workers]= useState<Array<object>>([])

@@ -37,24 +37,24 @@ export default function Part({part,index,id}:any){
     //------------redux-------------------
     const dispatch = useAppDispatch()
     let selectorPart = useAppSelector<any>(state => state.selectOrder.order)
-    
+    const URLMAINPC = useAppSelector<any>(state => state.URLMAINPC.URLMAINPC)
 
     //-----------------function-----------
     async function send_plus_Count(id:any,index_of_part:number,count:number){
-        return await axios.post('http://localhost:3000/api/teches/addPart/addCount', {id:id, index_of_part:index_of_part, count:count})
+        return await axios.post(`http://${URLMAINPC}:3000/api/teches/addPart/addCount`, {id:id, index_of_part:index_of_part, count:count})
     }
     async function send_delete_Count(id:any,index_of_part:number,count:number){
-        return await axios.post('http://localhost:3000/api/teches/addPart/deleteCount', {id:id, index_of_part:index_of_part, count:count})
+        return await axios.post(`http://${URLMAINPC}:3000/api/teches/addPart/deleteCount`, {id:id, index_of_part:index_of_part, count:count})
     }
     async function post(id:string){
-        return await axios.post('http://localhost:3000/api/teches', {id:id})
+        return await axios.post(`http://${URLMAINPC}:3000/api/teches`, {id:id})
     }
     async function deletePart(id:string, index_of_part:number){
-        return await axios.post('http://localhost:3000/api/teches/deletePart', {id:id,index_of_part:index_of_part})
+        return await axios.post(`http://${URLMAINPC}:3000/api/teches/deletePart`, {id:id,index_of_part:index_of_part})
     }
     //------------------fs------------------------
     async function categoryes() {
-        return await axios.get('http://localhost:3000/api/catagoryes')
+        return await axios.get(`http://${URLMAINPC}:3000/api/catagoryes`)
     }
     //--------------------------------------------
     //-----------operations---------------

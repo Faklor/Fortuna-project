@@ -19,6 +19,7 @@ import { setUnit } from '@/store/slice/unit'
 export default function ZoneStorage(){
     //----redux------
     const selector = useAppSelector<any>(state => state.unit.unit)
+    const URLMAINPC = useAppSelector<any>(state => state.URLMAINPC.URLMAINPC)
     
     //console.log(selector.parts)
     //---state-------
@@ -33,7 +34,7 @@ export default function ZoneStorage(){
 
     //------------------fs------------------------
     async function categoryes() {
-        return await axios.get('http://localhost:3000/api/catagoryes')
+        return await axios.get(`http://${URLMAINPC}:3000/api/catagoryes`)
     }
     useEffect(()=>{
         categoryes()

@@ -4,8 +4,9 @@
     margin:0;
     box-sizing:border-box;
     color:#686868;
-    scrollbar-width: 1px;          /* "auto" или "thin"  */
+    scrollbar-width: thin;          /* "auto" или "thin"  */
     scrollbar-color: #2564CF transparent;
+    
 }
 
 
@@ -17,7 +18,7 @@
 }
 *::-webkit-scrollbar-thumb{
     background-color: #2564CF;    /* цвет плашки */
-    border-radius: 20px;       /* закругления плашки */
-    border: 0px solid #403F3F;  /* padding вокруг плашки */
+    border-radius: 10px;       /* закругления плашки */
+    border: 1px solid #403F3F;  /* padding вокруг плашки */
 }
 

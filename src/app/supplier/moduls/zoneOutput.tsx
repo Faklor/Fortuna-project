@@ -16,6 +16,9 @@ export default function ZoneOutput(){
     const selectorUnit = useAppSelector<any>(state => state.unit.unit)
     const dispatch = useAppDispatch()
 
+    //--------------------value------------------
+    let months = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря']
+    let days = ['ВС','ПН','ВТ','СР','ЧТ','ПТ','СБ']
     let array:any = selectorUnit.orders
     let group:any = {}
 
@@ -27,9 +30,40 @@ export default function ZoneOutput(){
         let sortArray:any =  array.sort((a:any,b:any)=>{
             return new Date(b.date).getTime() - new Date(a.date).getTime()
         })
-        
-        group = Object.groupBy(sortArray, ({date}:{date:any})=> date)
 
+        let sort_days:any[] = []
+        sortArray.forEach((item:any)=>{
+            console.log(item)
+            let view_date:any = {
+                year:String(new Date(item.date).getFullYear())+' г.',
+                month:'',
+                day:{
+                    name:'',
+                    number:String(new Date(item.date).getDate())
+                }
+            }
+            //operations
+            months.forEach((month:string,index:number)=>{
+                if(index === new Date(item.date).getMonth()){
+                    view_date.month = month
+                }
+            })
+            
+            days.forEach((dayName:string,index:number)=>{
+                if(index === new Date(item.date).getDay()){
+                    view_date.day.name = dayName
+                }
+            })
+            
+            //==========
+            
+            sort_days.push({date:`(${view_date.day.name}) ${view_date.day.number} ${view_date.month} ${view_date.year}`,worker:item.worker,part:item.part})
+            
+        })
+
+        
+        group = Object.groupBy(sort_days, ({date}:{date:any})=> date)
+        
 
     }
     
