@@ -43,7 +43,9 @@ export default function Filter(){
         })
         
         
-    }, [dispatch ])
+
+    }, [dispatch])
+
 
     return(
         <div className='list'>    
