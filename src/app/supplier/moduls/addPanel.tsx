@@ -20,6 +20,8 @@ import Image from 'next/image'
 //----------redux--------------------
 import { useAppSelector, useAppDispatch } from '@/store/hooks'
 import { setUnit } from '@/store/slice/unit'
+//---------url-----------------------
+import url from '@/app/axios/URLs'
 
 
 
@@ -46,8 +48,10 @@ export default function AddPanel({id}:any){
     //const refAddButton = useRef<HTMLButtonElement>(null)
     //==========redux======================
     const URLMAINPC = useAppSelector<any>(state => state.URLMAINPC.URLMAINPC)
+    const selectorUnit = useAppSelector<any>(state => state.unit.unit)
     const dispatch  = useAppDispatch()
 
+    
     function getStatus(errorData:number,state:string ){
         
         if(state.length >= errorData){    
@@ -71,15 +75,15 @@ export default function AddPanel({id}:any){
     
     async function sendData(id:number,category:string,namePart:string, serialNumberPart:string,sellNumberPart:string, countPart:string, sell:string,contact:string,link:string, manufacturer:string){
 
-        return await axios.post(`http://${URLMAINPC}:3000/api/teches/addPart`, {id:id,catagory:category,name: namePart, serialNumber: serialNumberPart,sellNumber: sellNumberPart,count: Number(countPart),  sum:Number(sell),nameContact:contact,linkContact:link,manufacturer:manufacturer})
+        return await axios.post(url.addPart, {id:id,catagory:category,name: namePart, serialNumber: serialNumberPart,sellNumber: sellNumberPart,count: Number(countPart),  sum:Number(sell),nameContact:contact,linkContact:link,manufacturer:manufacturer})
     }
 
     async function post(id:string){
-        return await axios.post(`http://${URLMAINPC}:3000/api/teches`, {id:id})
+        return await axios.post(url.teches, {id:id})
     }
     //------------------fs------------------------
     async function categoryes() {
-        return await axios.get(`http://${URLMAINPC}:3000/api/catagoryes`)
+        return await axios.get(url.catagoryes)
     }
     //--------------------------------------------
     useEffect(()=>{
@@ -116,7 +120,7 @@ export default function AddPanel({id}:any){
             <div className='inputZone'>
                 <Image src={np} width={50} height={50} alt='Имя запчасти' className='prop'/>
                 <input type="text" placeholder="Название" value={namePart} onChange={(e)=>setNamePart(e.target.value)}/>
-                {getStatus(20, namePart)}
+                {/* {getStatus(20, namePart)} */}
             </div>
             <div className='inputZone'>
                 <Image src={number} width={50} height={50} alt='Имя запчасти' className='prop'/>
@@ -156,12 +160,12 @@ export default function AddPanel({id}:any){
             <div className='inputZone'>
                 <Image src={organization} width={50} height={50} alt='Имя запчасти' className='prop'/>
                 <input type="text" placeholder="Название организации" value={contact} onChange={(e)=>setContact(e.target.value)}/>
-                {getStatus(20, contact)}
+                {/* {getStatus(20, contact)} */}
             </div>
             <div className='inputZone'>
                 <Image src={linkImg} width={50} height={50} alt='Имя запчасти' className='prop'/>
                 <input type="text" placeholder="Ссылка на источник" value={link} onChange={(e)=>setLink(e.target.value)}/>
-                {getStatus(100, link)}
+                {/* {getStatus(100, link)} */}
             </div>
             
 

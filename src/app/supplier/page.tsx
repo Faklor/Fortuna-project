@@ -7,7 +7,7 @@ import ZoneOutput from './moduls/zoneOutput'
 import List from './moduls/list'
 //-----image------
 import supplier from '@/res/titlePage/supplier.svg'
-
+import back from '@/res/titlePage/backgroundTitlePage.svg'
 
 
 export default function Supplier(){
@@ -17,6 +17,7 @@ export default function Supplier(){
 
     return(
         <main className='supplier'>
+            {/* <Image src={back} width={1000} height={800} alt='back' className='backImg'/> */}
             <List/>
 
             <div className="mainDiv">

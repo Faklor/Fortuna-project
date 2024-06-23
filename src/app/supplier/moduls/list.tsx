@@ -9,7 +9,8 @@ import { useEffect, useState, useRef } from 'react'
 //----redux-------
 import { useAppSelector, useAppDispatch } from '@/store/hooks'
 import { setUnit } from '@/store/slice/unit'
-
+//-----url------
+import url from '@/app/axios/URLs'
 
 export default function Filter(){
     //---------redux------------------
@@ -26,11 +27,11 @@ export default function Filter(){
    
 
     async function get(){
-        return await axios.get(`http://${URLMAINPC}:3000/api/teches`)
+        return await axios.get(url.teches)
     }
 
     async function post(id:string){
-        return await axios.post(`http://${URLMAINPC}:3000/api/teches`, {id:id})
+        return await axios.post(url.teches, {id:id})
     }
 
     useEffect(()=>{

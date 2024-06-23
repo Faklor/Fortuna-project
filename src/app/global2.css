@@ -5,7 +5,7 @@
     box-sizing:border-box;
     color:#686868;
     scrollbar-width: thin;          /* "auto" или "thin"  */
-    scrollbar-color: #2564CF transparent;
+    scrollbar-color: #1FE28C transparent;
     
 }
 
@@ -17,7 +17,7 @@
     background: #403F3F;        /* цвет дорожки */
 }
 *::-webkit-scrollbar-thumb{
-    background-color: #2564CF;    /* цвет плашки */
+    background-color: #1FE28C;    /* цвет плашки */
     border-radius: 10px;       /* закругления плашки */
     border: 1px solid #403F3F;  /* padding вокруг плашки */
 }

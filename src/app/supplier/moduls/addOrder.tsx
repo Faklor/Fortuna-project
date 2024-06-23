@@ -16,6 +16,9 @@ import dateImg from '@/res/date.svg'
 //--------axios------------------
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+//---------url-----------------------
+import url from '@/app/axios/URLs'
+
 
 
 export default function AddOrder(){
@@ -26,16 +29,16 @@ export default function AddOrder(){
     const dispatch = useAppDispatch()
     //------------axios--------------------------
     async function getWorkers() {
-        return await axios.get(`http://${URLMAINPC}:3000/api/workers`)
+        return await axios.get(url.workers)
     }
     async function getteches() {
-        return await axios.get(`http://${URLMAINPC}:3000/api/teches`)
+        return await axios.get(url.teches)
     }
     async function sendOrder(id:number, date:any, worker:string, part:any) {
-        return await axios.post(`http://${URLMAINPC}:3000/api/teches/addOrder`, { id:id, date:date, worker:worker, part:part})
+        return await axios.post(url.addOrder, { id:id, date:date, worker:worker, part:part})
     }
     async function post(id:string){
-        return await axios.post(`http://${URLMAINPC}:3000/api/teches`, {id:id})
+        return await axios.post(url.teches, {id:id})
     }
     //----------------values---------------------
     let [list_workers, setList_workers]= useState<Array<object>>([])

@@ -16,6 +16,9 @@ import user from '@/res/user.svg'
 import manufacturerImg  from '@/res/manufacturer.svg'
 import number from '@/res/number.svg'
 import sellNumber from '@/res/sellNumber.svg'
+//---------url-----------------------
+import url from '@/app/axios/URLs'
+
 
 export default function Order(order:any){
 
@@ -29,7 +32,7 @@ export default function Order(order:any){
 
     //------------------fs------------------------
     async function categoryes() {
-        return await axios.get(`http://${URLMAINPC}:3000/api/catagoryes`)
+        return await axios.get(url.catagoryes)
     }
     useEffect(()=>{
         categoryes()

@@ -14,6 +14,8 @@ import AddPanel from './addPanel'
 //----redux-----
 import { useAppSelector, useAppDispatch } from '@/store/hooks'
 import { setUnit } from '@/store/slice/unit'
+//------url-----
+import url from '@/app/axios/URLs'
 
 
 export default function ZoneStorage(){
@@ -34,7 +36,7 @@ export default function ZoneStorage(){
 
     //------------------fs------------------------
     async function categoryes() {
-        return await axios.get(`http://${URLMAINPC}:3000/api/catagoryes`)
+        return await axios.get(url.catagoryes)
     }
     useEffect(()=>{
         categoryes()

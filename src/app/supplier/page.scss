@@ -1,5 +1,6 @@
 .supplier{
     background-color: #FAF9F8;
+    //background-color: #03C770;
     
     font-size: 20px;
     position: fixed;
@@ -7,7 +8,14 @@
     height: 100%;
 
     display: grid;
-    grid-template-columns: 25% 1fr 25%;
+    grid-template-columns: 20% 1fr 25%;
+    .backImg{
+        position: fixed;
+        z-index: -1;
+        align-self: end;
+        justify-self: end;
+    }
+
     .mainDiv{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -24,6 +32,7 @@
             
             grid-column: 1/4;
             background-color: #2564CF;
+            background-color: #1FE28C;
             //background-color: #DF3482;
             height: 2.6em;
             border-radius: 10px;

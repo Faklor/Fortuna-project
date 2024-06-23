@@ -27,6 +27,8 @@
         margin:0.5em;
         .prop{
             background-color: #2564CF;
+            background-color: #1FE28C;
+
             padding: 0.35em;
             //border-radius: 5px 0 0 5px;
             border-radius: 5px;
@@ -47,6 +49,8 @@
     
             &:focus{
                 background-color: #2564CF;
+                background-color: #1FE28C;
+
                 color: #fff;
                 &::placeholder{
                     color:#d6d5d5;
@@ -66,6 +70,8 @@
 
     .activeButton{
         background-color: #2564CF;
+        background-color: #1FE28C;
+
         padding: 1em 1.5em;
         border-radius: 5px;
         border:none;
