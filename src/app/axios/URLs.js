@@ -1,6 +1,6 @@
 // import {networkInterfaces} from 'os'
 
-let IP = 'localhost'
+let IP = '192.168.10.102'
 
 // async function getIPadress(){
 //     const nets = networkInterfaces()
