@@ -24,7 +24,6 @@ export default function RootLayout({
   children,
   
 }: Readonly<{
-  data:any,
   children: React.ReactNode;
 }>) {
   return (
