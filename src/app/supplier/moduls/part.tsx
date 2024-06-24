@@ -116,7 +116,7 @@ export default function Part({part,index,id}:any){
                     {/* <Image src={categoryImg} width={55} height={55} alt='Категория' className='unVisible'/> */}
                     {category.map((item:any, index:any)=>{
                         if(part.catagory === item.title){
-                            return <Image src={`/categoryes/${item.file}`} width={55} height={55} alt='Категория' className='unVisible' key={index}/>
+                            return <Image src={`./categoryes/${item.file}`} width={55} height={55} alt='Категория' className='unVisible' key={index}/>
                         }
                         
                     })}
