@@ -1,7 +1,7 @@
 // import {networkInterfaces} from 'os'
 
 //let IP = '192.168.10.102'
-let IP = '192.168.10.23'
+let IP = 'localhost'
 // async function getIPadress(){
 //     const nets = networkInterfaces()
 //     const results = Object.create(null) // Or just '{}', an empty object
@@ -29,9 +29,9 @@ let IP = '192.168.10.23'
 
 
 //--------------------------------
-let catagoryes = `https://${IP}:5000/api/categoryes`
-let teches = `https://${IP}:5000/api/teches`
-let workers = `https://${IP}:5000/api/workers`
+let catagoryes = `http://${IP}:5000/api/categoryes`
+let teches = `http://${IP}:5000/api/teches`
+let workers = `http://${IP}:5000/api/workers`
 
 let addCount = `http://${IP}:5000/api/addCount`
 let deleteCount = `http://${IP}:5000/api/deleteCount`
